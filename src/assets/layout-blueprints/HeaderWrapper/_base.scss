@@ -1,0 +1,57 @@
+//  Core
+
+html,
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: auto;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app-wrapper {
+  display: flex;
+  flex: 1;
+  background: $page-bg;
+}
+
+.app-main {
+  display: flex;
+  flex: 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+
+  &--inner {
+    padding: $layout-spacer;
+    display: flex;
+    flex: 1;
+
+    &__wrapper {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+// Fixed header
+
+@include media-breakpoint-up(lg) {
+  .app-header-fixed {
+    .app-content {
+      padding-top: $header-height;
+    }
+  }
+}
